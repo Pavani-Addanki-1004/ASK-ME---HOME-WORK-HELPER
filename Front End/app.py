@@ -1,7 +1,7 @@
 import openai
 
 # Set your OpenAI API key
-openai.api_key = r'AIzaSyA3WeZ8dYxZWF64vfUkH9OHeQVTjgHUQZ4'  # Replace with your real key
+openai.api_key = r''  # Replace with your real key
 
 def ask_chatbot(user_question):
     try:
