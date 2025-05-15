@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Q&A</title>
+  <script defer src="script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #response {
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    #response.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 min-h-screen flex items-center justify-center px-4">
+
+  <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md text-center space-y-4">
+    <h1 class="text-3xl font-bold text-purple-600 animate-bounce">Ask Anything</h1>
+    
+    <input type="text" id="questionInput" placeholder="Type your question..." class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-purple-400"/>
+
+    <button onclick="startVoice()" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">
+      🎤 Speak
+    </button>
+
+    <button onclick="askQuestion()" class="bg-purple-500 text-white px-6 py-2 rounded hover:bg-purple-600 transition">
+      Ask
+    </button>
+
+    <h2 class="text-gray-600">OR</h2>
+
+    <input type="file" id="imageInput" accept="image/*" class="mb-2" />
+    <button onclick="uploadImage()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+      Upload Image
+    </button>
+
+    <div id="response" class="text-lg text-blue-800 font-semibold mt-4"></div>
+  </div>
+
+
+</body>
+</html>
